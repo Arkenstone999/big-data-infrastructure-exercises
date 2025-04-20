@@ -1,4 +1,5 @@
 from os.path import dirname, join
+import os 
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -15,6 +16,7 @@ class DBCredentials(BaseSettings):
     port: int = 5432
     username: str
     password: str
+    database: str = "postgres"
     model_config = SettingsConfigDict(env_prefix="bdi_db_")
 
 
